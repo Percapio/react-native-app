@@ -1,6 +1,6 @@
 import * as APIUtil from '../utils/api_util';
 
-export const FETCHED_POSTS = 'FETCHED_POSTS';
+export const FETCHED_POSTS    = 'FETCHED_POSTS';
 
 export const fetchedPosts = posts => ({
   type: FETCHED_POSTS,

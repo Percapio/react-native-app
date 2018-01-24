@@ -69,3 +69,7 @@ const GetAllThreads = () => (
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 If you are cloning this project, and wish to see more advanced options of configuring/starting the app.  Please, visit [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md) as it will provide more details on how to get started.
 
+
+---
+#### Disclaimer
+This mobile app was designed and built to help me learn more about React Native and Redux.  I am in no shape or form affiliated with CraigsList.

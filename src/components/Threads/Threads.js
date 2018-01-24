@@ -10,14 +10,14 @@ export default class ThreadsComponent extends Component {
   constructor() {
     super();
 
-    this.state = {
-      threads: [],
-    };
+    // this.state = {
+    //   threads: [],
+    // };
   }
 
   componentDidMount() {
-    this.props.getAllThreads()
-      .then( payload => this.setState({ threads: payload.threads }) );
+    // this.props.getAllThreads()
+    //   .then( payload => this.setState({ threads: payload.threads }) );
   }
 
   _keyExtractor(item, index){
@@ -25,7 +25,6 @@ export default class ThreadsComponent extends Component {
   }
 
   _renderItem({ item }) {
-    // console.log( item );
     return(
       <View style={ styles.listItems }>
         <Text>Title: { item.title }</Text>
@@ -37,16 +36,16 @@ export default class ThreadsComponent extends Component {
     return(
       <View style={ styles.threadsComponent }>
         <Text style={ styles.threadsHeader }>Hi, from Threads Component</Text>
-
-        <FlatList
-          data={ this.state.threads }
-          keyExtractor={ this._keyExtractor }
-          renderItem={ this._renderItem }
-        />
       </View>
     );
   }
 }
+
+        // <FlatList
+        //   data={ this.state.threads }
+        //   keyExtractor={ this._keyExtractor }
+        //   renderItem={ this._renderItem }
+        // />
 
 const styles = StyleSheet.create({
   threadsComponent: {

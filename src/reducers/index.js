@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import postsReducer from './postsReducer';
-import threadsReducer from './threadsReducer';
+import forumsReducer from './forumsReducer';
+import navReducer from './navReducer';
 
 export default combineReducers({
-  posts: postsReducer,
-  threads: threadsReducer
+  nav: navReducer,
+  forums: forumsReducer
 });

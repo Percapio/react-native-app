@@ -2,18 +2,6 @@
   "name": "r_native_sidescroller",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "jest-expo": "23.0.0",
-    "react-native-scripts": "1.9.0",
-    "react-test-renderer": "16.0.0",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
-  },
-  "expo": {
-    "name": "r_native_sidescroller",
-    "slug": "r_native_sidescroller",
-    "sdkVersion": "1.6.0_65"
-  },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
     "start": "react-native-scripts start",
@@ -22,15 +10,26 @@
     "ios": "react-native-scripts ios",
     "test": "node node_modules/jest/bin/jest.js --watch"
   },
+  "expo": {
+    "name": "r_native_sidescroller",
+    "slug": "r_native_sidescroller",
+    "sdkVersion": "1.6.0_65"
+  },
   "jest": {
     "preset": "jest-expo"
+  },
+  "devDependencies": {
+    "jest-expo": "23.0.0",
+    "react-native-scripts": "1.9.0",
+    "react-test-renderer": "16.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
   },
   "dependencies": {
     "expo": "^23.0.4",
     "lodash": "^4.17.4",
     "react": "16.0.0",
     "react-native": "0.50.3",
-    "react-native-cheerio": "^1.0.0-rc.4",
     "react-native-elements": "^0.19.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2"

@@ -31,12 +31,16 @@ export default class ForumComponent extends Component {
     return index;
   }
 
-  _goToForum() {}
+  goToThread( link ) {
+    const navigate = this.props.navigation.navigate;
+    navigate('Thread', { title: 'Thread', params: link });
+  }
 
   renderThreads({ item }) {
     return (
       <FlatList
         data={ item.threads }
+        keyExtractor={ this._keyExtractor.bind(this) }
         renderItem={ this.renderThread.bind(this) }
       />
     );
@@ -44,7 +48,9 @@ export default class ForumComponent extends Component {
 
   renderThread({ item }) {
     return (
-      <TouchableHighlight style={ styles.listItems }>
+      <TouchableHighlight
+        style={ styles.listItems }
+        onPress={ () => this.goToThread( item.href ) }>
         <Text style={ styles.forumText }>{ item.title }</Text>
       </TouchableHighlight>
     )
@@ -56,7 +62,7 @@ export default class ForumComponent extends Component {
         <Text style={ styles.forumHeader }>Forum Component.</Text>
         <FlatList
           data={ this.state.threads }
-          keyExtractor={ this._keyExtractor }
+          keyExtractor={ this._keyExtractor.bind(this) }
           renderItem={ this.renderThreads.bind(this) }/>
       </View>
     );

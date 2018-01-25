@@ -12,14 +12,12 @@ export default class IndexComponent extends Component {
     title: 'Index'
   };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       forums: [],
     };
-
-    // this.goToForum = this.goToForum.bind(this);
   }
 
   componentDidMount() {
@@ -33,20 +31,19 @@ export default class IndexComponent extends Component {
 
   goToForum( link ) {
     const navigate = this.props.navigation.navigate;
-    navigate('Forum', { title: link });
+    navigate('Forum', { title: 'Forum', params: link });
   }
 
   renderItem({ item }) {
     return(
-      <View style={ styles.listItems }>
-        <TouchableHighlight
-          activeOpacity={ 0.5 }
-          underlayColor={ '#cac4c4' } 
-          onPress={ () => this.goToForum( item.link ) }>
+      <TouchableHighlight
+        activeOpacity={ 0.5 }
+        underlayColor={ '#cac4c4' }
+        style={ styles.listItems }
+        onPress={ () => this.goToForum( item.link ) }>
 
-          <Text style={ styles.forumText }>{ item.title } { item.count }</Text>
-        </TouchableHighlight>
-      </View>
+        <Text style={ styles.forumText }>{ item.title } { item.count }</Text>
+      </TouchableHighlight>
     );
   }
 

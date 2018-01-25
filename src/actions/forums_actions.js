@@ -2,7 +2,7 @@ import GetAllForums from '../utils/api_all_forums';
 
 export const FETCHED_FORUMS = 'FETCHED_FORUMS';
 
-export const fetchedForums = forums =>({
+const fetchedForums = forums =>({
   type: FETCHED_FORUMS,
   forums
 });

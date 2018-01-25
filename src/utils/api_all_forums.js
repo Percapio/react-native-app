@@ -34,7 +34,7 @@ const GetAllForums = () => (
 
 export default GetAllForums;
 
-const convertIntoValues = ( forumString ) => {
+const convertIntoValues = forumString => {
   let target   = forumString.indexOf('target');
   let linkHref = forumString.slice( 8, target - 2 );
   let title    = forumString.slice( target + 14, -1 );
@@ -42,7 +42,7 @@ const convertIntoValues = ( forumString ) => {
   return [ linkHref, title ];
 };
 
-const convertIntoInt = ( forumString ) => {
+const convertIntoInt = forumString => {
   let upToNumber = forumString.indexOf('>');
   let number = forumString.slice( upToNumber + 1 );
 

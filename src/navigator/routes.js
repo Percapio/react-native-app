@@ -1,9 +1,9 @@
 import IndexContainer from '../containers/index_container';
-import ForumComponent from '../components/Forum/Forum';
+import ForumContainer from '../containers/forum_container';
 
 const Routes = {
   Index: { screen: IndexContainer },
-  Forum: { screen: ForumComponent }
+  Forum: { screen: ForumContainer }
 };
 
 export default Routes;

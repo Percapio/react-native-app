@@ -12,13 +12,19 @@ export default class ForumComponent extends Component {
     title: 'Forum'
   };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      threads: [],
+    }
+
+    this.params = props.navigation.state.params.params;
   }
 
   componentDidMount() {
-
+    this.props.getAllThreads( this.params )
+      .then( payload => this.setState({ threads: payload.threads }) );
   }
 
   _keyExtractor(item, index) {
@@ -27,31 +33,36 @@ export default class ForumComponent extends Component {
 
   _goToForum() {}
 
-  _renderItem({item}) {
+  renderThreads({ item }) {
     return (
-      <View style={styles.listItems}>
-        <TouchableHighlight
-          underlayColor={'#cac4c4'}
-          onPress={this._goToForum(item.link)}>
-          <Text style={styles.forumText}>{item.title} {item.count}</Text>
-        </TouchableHighlight>
-      </View>
+      <FlatList
+        data={ item.threads }
+        renderItem={ this.renderThread.bind(this) }
+      />
     );
+  }
+
+  renderThread({ item }) {
+    return (
+      <TouchableHighlight style={ styles.listItems }>
+        <Text style={ styles.forumText }>{ item.title }</Text>
+      </TouchableHighlight>
+    )
   }
 
   render() {
     return (
-      <View style={styles.forumComponent}>
-        <Text style={styles.forumHeader}>Forum Component.</Text>
+      <View style={ styles.forumComponent }>
+        <Text style={ styles.forumHeader }>Forum Component.</Text>
+        <FlatList
+          data={ this.state.threads }
+          keyExtractor={ this._keyExtractor }
+          renderItem={ this.renderThreads.bind(this) }/>
       </View>
     );
   }
 }
 
-        // <FlatList
-        //   data={this.state.forums}
-        //   keyExtractor={this._keyExtractor}
-        //   renderItem={this._renderItem}/>
 
 const styles = StyleSheet.create({
   forumComponent: {

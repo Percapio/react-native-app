@@ -17,7 +17,7 @@ const GetAllForums = () => (
             forums.push({
               'link'  : link,
               'title' : title,
-              'count' : convertIntoInt( el ),
+              'count' : convertIntoInt( payloadArrayed[index + 1] ),
             });
           } else {
             forums.push({
@@ -31,8 +31,6 @@ const GetAllForums = () => (
       return forums;
     })
 );
-
-export default GetAllForums;
 
 const convertIntoValues = forumString => {
   let target   = forumString.indexOf('target');
@@ -48,3 +46,5 @@ const convertIntoInt = forumString => {
 
   return parseInt( number );
 };
+
+export default GetAllForums;

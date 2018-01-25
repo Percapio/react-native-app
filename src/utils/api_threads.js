@@ -1,6 +1,6 @@
 import merge from 'lodash/merge';
 
-export const allThreads = ( params ) => {
+const allThreads = ( params ) => {
   const url = 'http://forums.craigslist.org/?act=DF&' + params.slice(1);
 
   return (
@@ -59,6 +59,7 @@ const grabLink = (threadString, end) => {
   return hrefSlice;
 };
 
+// TODOLATER: Refractor code below to reduce Time Complexity
 const loopThroughPayload = payload => {
   const splitPayload = payload.split('span');
   let threads = {};
@@ -83,3 +84,5 @@ const cleanTitle = title => {
 
   return title;
 };
+
+export default allThreads;

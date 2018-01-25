@@ -1,4 +1,4 @@
-export const singleThread = (params) => {
+const singleThread = (params) => {
   const url = 'http://forums.craigslist.org/?' + params;
 
   return (
@@ -48,3 +48,5 @@ const cleanQuote = quote => {
 
   return quote;
 };
+
+export default singleThread;

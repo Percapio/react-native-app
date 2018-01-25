@@ -1,5 +1,5 @@
-import { allThreads } from '../utils/api_threads';
-import { singleThread } from '../utils/api_thread';
+import allThreads from '../utils/api_threads';
+import singleThread from '../utils/api_thread';
 
 export const FETCHED_THREADS = 'FETCHED_THREADS';
 export const FETCHED_THREAD  = 'FETCHED_THREAD';

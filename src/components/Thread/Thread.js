@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { 
   View, 
   Text,
-  StyleSheet
 } from 'react-native';
+
+import styles from './thread.style';
 
 export default class ThreadComponent extends Component {
   static navigationOptions = {
@@ -36,23 +37,3 @@ export default class ThreadComponent extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  threadsComponent: {
-    flex: 1,
-    backgroundColor: '#ccc',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 20
-  },
-
-  threadsHeader: {
-    padding: 10,
-  },
-
-  listItems: {
-    padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd' 
-  }
-});

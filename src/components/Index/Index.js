@@ -35,6 +35,11 @@ export default class IndexComponent extends Component {
     navigate('Forum', { title: 'Forum', params: link });
   }
 
+  goToLogin() {
+    const navigate = this.props.navigation.navigate;
+    navigate('Login', { title: 'Login' });
+  }
+
   renderItem({ item }) {
     return(
       <TouchableHighlight
@@ -51,6 +56,11 @@ export default class IndexComponent extends Component {
   render() {
     return(
       <View style={ styles.indexComponent }>
+        <TouchableHighlight
+          onPress={ this.goToLogin.bind(this) }
+        >
+        <Text>Go To Login</Text>
+        </TouchableHighlight>
         <Text style={ styles.indexHeader }>Search Component goes here.</Text>
         <FlatList
           data={ this.state.forums }

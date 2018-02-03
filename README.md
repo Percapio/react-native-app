@@ -1,5 +1,7 @@
 ## Craigslist Forums Mobile App (_app name TBD_)
 
+_project currently on hold until a later date_
+
 A simple mobile app for the IOS and Android written using React Native and Redux, and bootstrapped by Create React Native App.  
 
 The concept behind this app is to allow users to interact with Craiglist's forums with a mobile-app built with a user-first mentality.
